@@ -44,8 +44,8 @@ def addPeople():
 
         mycursor.execute("INSERT INTO people(Name) VALUES(%s)", [name])
         mysql.connection.commit()
-    
-    return 'Success'
+    return render_template("AddPeople.html")
+    # return 'Success'
 
 @app.route('/AddChores', methods = ['GET', 'POST'])
 def addChore():
@@ -59,8 +59,8 @@ def addChore():
 
         mycursor.execute("INSERT INTO chores(Chore) VALUES(%s)", [chore])
         mysql.connection.commit()
-    
-    return 'Success'
+    return render_template("AddChores.html")
+    # return 'Success'
 
 @app.route('/ViewPeople')
 def peoples():
