@@ -1,0 +1,19 @@
+CREATE TABLE people(
+ID VARCHAR(45) NOT NULL DEFAULT (uuid()),
+Name VARCHAR(50) NOT NULL,
+PRIMARY KEY (ID)
+);
+
+CREATE TABLE chores(
+id VARCHAR(45) NOT NULL DEFAULT (uuid()),
+Chore VARCHAR(50) NOT NULL,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE chorestracker(
+People_ID VARCHAR(45) NOT NULL REFERENCES people(ID),
+Chores VARCHAR(45) NOT NULL REFERENCES chores(id),
+Date VARCHAR(50) NOT NULL
+);
+       
+       

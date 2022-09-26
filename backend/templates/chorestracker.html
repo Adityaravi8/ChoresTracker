@@ -1,0 +1,13 @@
+<table border = 1>
+    <th>Name</th>
+    <th>Chore</th>
+    <th>Date</th>
+    {% for chorestrackerv1 in chorestrackerTable %}
+    <tr>
+        <td>{{chorestrackerv1[0]}}</td>
+        <td>{{chorestrackerv1[1]}}</td>
+        <td>{{chorestrackerv1[2]}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
