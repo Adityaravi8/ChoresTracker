@@ -72,8 +72,7 @@ def peoples():
     peopleTable = mycursor.fetchall()
 
     
-    # return render_template("people.html", peopleTable=peopleTable)
-    return(peopleTable)
+    return render_template("people.html", peopleTable=peopleTable)
 
 
 @app.route('/ViewChores')
