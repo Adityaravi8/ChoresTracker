@@ -37,30 +37,26 @@ def addPeople():
 
     if request.method == 'POST':
 
-        userName = request.form
+        userName = request.json
         name = userName['name']
 
         mycursor = mysql.connection.cursor()
 
         mycursor.execute("INSERT INTO people(Name) VALUES(%s)", [name])
         mysql.connection.commit()
-    return render_template("AddPeople.html")
-    # return 'Success'
 
 @app.route('/AddChores', methods = ['GET', 'POST'])
 def addChore():
 
     if request.method == 'POST':
 
-        choresData = request.form
+        choresData = request.json
         chore = choresData['chore']
 
         mycursor = mysql.connection.cursor()
 
         mycursor.execute("INSERT INTO chores(Chore) VALUES(%s)", [chore])
         mysql.connection.commit()
-    return render_template("AddChores.html")
-    # return 'Success'
 
 @app.route('/ViewPeople')
 def peoples():
@@ -73,7 +69,6 @@ def peoples():
 
     
     return render_template("people.html", peopleTable=peopleTable)
-
 
 @app.route('/ViewChores')
 def chores():
