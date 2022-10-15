@@ -12,7 +12,7 @@ app.config['MYSQL_USER'] = db['mysql_user']
 app.config['MYSQL_PASSWORD'] = db['mysql_password']
 app.config['MYSQL_DB'] = db['mysql_db']
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/InsertChoresTracker', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
 
@@ -27,7 +27,7 @@ def index():
         name = mycursor.fetchone()
         mycursor.execute("SELECT Chore FROM chores WHERE id = %s", [chore_id])
         chore = mycursor.fetchone()
-        mycursor.execute("INSERT INTO chorestracker(People_ID, Chores, Date) VALUES(%s,%s,%s)", [name, chore, date])
+        mycursor.execute("INSERT INTO chorestracker(Person, Chores, Date) VALUES(%s,%s,%s)", [name, chore, date])
         mysql.connection.commit()
 
     return 'Success'
@@ -71,8 +71,7 @@ def peoples():
     peopleTable = mycursor.fetchall()
 
     
-    return render_template("people.html", peopleTable=peopleTable)
-    # return {peopleTable}
+    return {peopleTable}
 
 @app.route('/ViewChores')
 def chores():
@@ -84,7 +83,7 @@ def chores():
 
     choresTable = mycursor.fetchall()
 
-    return render_template("chores.html", choresTable=choresTable)
+    return {choresTable}
 
 
 @app.route('/ViewChorestracker')
@@ -96,7 +95,7 @@ def chorestracker():
 
     chorestrackerTable = mycursor.fetchall()
 
-    return render_template("chorestracker.html", chorestrackerTable=chorestrackerTable)
+    return {chorestrackerTable}
 
     
 

@@ -10,6 +10,9 @@ function App() {
       <AddPeople />
       <h2>Add a Chore</h2>
       <AddChores />
+      <br />
+      <h1>ChoresTracker</h1>
+      <br />
     </div>
   );
 }
