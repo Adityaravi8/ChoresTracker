@@ -1,3 +1,5 @@
-
+#Yaml file that contains Database Configurations
 backend/dbConfig.yml
+
+#Python Virtual Environment used in backend
 ChoresTracker-env/
