@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function InsertChoresTracker() {
+  const [people, setPeople] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("/ViewPeople")
+      .then((response) => {
+        console.log(response);
+        setPeople(response);
+      })
+      .catch((err) => console.log(err));
+  });
+
   return (
     <div>
-      <h2>Choose a Person</h2>
-      <select>
-        <option value="test">Test</option>
-        <option value="people">People</option>
-        <option value="react">React</option>
-      </select>
+      <div>Select User: {people}</div>
       <br />
-      <h2>Choose a Chore</h2>
-      <select>
-        <option value="test">Test</option>
-        <option value="people">People</option>
-        <option value="react">React</option>
+      <select onChange={(e) => setPeople(e.target.value)}>
+        <option value="">Select People</option>
+        {people.map((people) => (
+          <option key={people.ID} label={people.Name}></option>
+        ))}
       </select>
-      <br />
-      <h2>Enter a Date</h2>
-      <input type="text" placeholder="Enter Date" />
     </div>
   );
 }

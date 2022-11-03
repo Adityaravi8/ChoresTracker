@@ -66,7 +66,7 @@ def peoples():
 
     mycursor = mysql.connection.cursor()
 
-    mycursor.execute("SELECT Name FROM people")
+    mycursor.execute("SELECT * FROM people")
 
     peopleTable = mycursor.fetchall()
 
