@@ -16,7 +16,7 @@ mysqlclient==2.1.1
 PyYAML==6.0
 Werkzeug==2.2.2
 
-Install Packages using pip from the same directory of the requirements.txt file:
+Install Packages using pip from the same directory as the requirements.txt file:
 
 pip install -r requirements.txt
 
