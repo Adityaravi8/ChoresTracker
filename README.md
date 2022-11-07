@@ -31,3 +31,12 @@ Change into frontend directory and use the command below to start frontend:
 npm start
 
 You will need to setup a mysql database and connect the API to the database.
+
+The backend contains a folder called sql that holds the code to create the database and the tables for the database that the application will be using.
+
+Create a Yaml file called dbConfig.yml with the following:
+
+mysql_host: "Insert Host for the server"
+mysql_user: "The user of the server"
+mysql_password: "Password you created when install MySQL"
+mysql_db: "The name of the database you created"
