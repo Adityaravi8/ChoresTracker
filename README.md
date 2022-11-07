@@ -29,3 +29,5 @@ Run Frontend:
 Change into frontend directory and use the command below to start frontend:
 
 npm start
+
+You will need to setup a mysql database and connect the API to the database.
