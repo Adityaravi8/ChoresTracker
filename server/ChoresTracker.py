@@ -1,16 +1,14 @@
 from flask import Flask, request
 from flask_mysqldb import MySQL
-import yaml
 
 app = Flask(__name__)
 mysql = MySQL(app)
 
 #Database Config
-db = yaml.safe_load(open('dbConfig.yml'))
-app.config['MYSQL_HOST'] = db['mysql_host']
-app.config['MYSQL_USER'] = db['mysql_user']
-app.config['MYSQL_PASSWORD'] = db['mysql_password']
-app.config['MYSQL_DB'] = db['mysql_db']
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'MyRootPassword'
+app.config['MYSQL_DB'] = 'chorestracker'
 
 @app.route('/InsertChoresTracker', methods=['GET', 'POST'])
 def index():
