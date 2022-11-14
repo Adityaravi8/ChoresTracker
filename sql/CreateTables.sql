@@ -15,5 +15,5 @@ Person VARCHAR(45) NOT NULL REFERENCES people(ID),
 Chores VARCHAR(45) NOT NULL REFERENCES chores(id),
 Date VARCHAR(50) NOT NULL
 );
-       
-       
+
+

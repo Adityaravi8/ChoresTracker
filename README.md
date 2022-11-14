@@ -12,6 +12,7 @@ Flask-MySQLdb==1.0.1
 itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.1
+mysql-connector-python==8.0.31
 mysqlclient==2.1.1
 PyYAML==6.0
 Werkzeug==2.2.2
@@ -20,23 +21,14 @@ Install Packages using pip from the same directory as the requirements.txt file:
 
 pip install -r requirements.txt
 
-Run Api by typing in the command below. Make sure you are in the backend directory:
+Change into the server directory and use the following command to run the api:
 
 python ChoresTracker.py
 
 Run Frontend:
 
-Change into frontend directory and use the command below to start frontend:
+Change into the client directory and use the command below to start the react app:
 
 npm start
 
-You will need to setup a mysql database and connect the API to the database.
-
-The backend contains a folder called sql that holds the code to create the database and the tables for the database that the application will be using.
-
-Create a Yaml file called dbConfig.yml with the following:
-
-mysql_host: "Insert Host for the server"
-mysql_user: "The user of the server"
-mysql_password: "Password you created when install MySQL"
-mysql_db: "The name of the database you created"
+You will need to setup a mysql database and connect the API to the database. The sql folder contains the file to create the database called CreateDB and another file that creates the table used in this application called CreateTables. The ChoresTracker.py file contains the database configuration. Change the host,user,password to the host,user and password you created in your local drive.
