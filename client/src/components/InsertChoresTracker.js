@@ -44,8 +44,8 @@ function InsertChoresTracker() {
       <br />
       <select onChange={(event) => setSelectedPerson(event.target.value)}>
         <option value="">Select People</option>
-        {people.map((peopleResult) => (
-          <option value={peopleResult.id} label={peopleResult.name}></option>
+        {people.map((peopleResults) => (
+          <option value={peopleResults.id} label={peopleResults.name}></option>
         ))}
       </select>
       <br />
@@ -54,8 +54,8 @@ function InsertChoresTracker() {
       <br />
       <select onChange={(event) => setSelectedChore(event.target.value)}>
         <option value="">Select Chore</option>
-        {chores.map((choreResult) => (
-          <option value={choreResult.id} label={choreResult.chore}></option>
+        {chores.map((choreResults) => (
+          <option value={choreResults.id} label={choreResults.chore}></option>
         ))}
       </select>
       <br />

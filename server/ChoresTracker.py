@@ -67,14 +67,14 @@ def peoples():
     mycursor.execute("SELECT * FROM people")
 
     peopleTableEntries = mycursor.fetchall()
-    peopleResult = []
+    peopleResults = []
     for people in peopleTableEntries:
         personEntry = {}  
         personEntry['id'] = people[0] 
         personEntry['name'] =  people[1]
-        peopleResult.append(personEntry)
+        peopleResults.append(personEntry)
 
-    return peopleResult
+    return peopleResults
 
 @app.route('/ViewChores')
 def chores():
@@ -85,15 +85,15 @@ def chores():
     mycursor.execute("SELECT * FROM chores")
 
     choresTableEntries = mycursor.fetchall()
-    choreResult = []
+    choreResults = []
 
     for chores in choresTableEntries:
         choreEntry = {}
         choreEntry['id'] = chores[0]
         choreEntry['chore'] = chores[1]
-        choreResult.append(choreEntry)
+        choreResults.append(choreEntry)
     
-    return choreResult
+    return choreResults
 
 
 @app.route('/ViewChoresTracker')
@@ -104,16 +104,16 @@ def chorestracker():
     mycursor.execute("SELECT * FROM chorestracker")
 
     choresTrackerTable = mycursor.fetchall()
-    chorestrackerResult = []
+    chorestrackerResults = []
 
     for chorestracker in choresTrackerTable:
         choresTrackerEntry = {}
         choresTrackerEntry['Person'] = chorestracker[0]
         choresTrackerEntry['Chores'] = chorestracker[1]
         choresTrackerEntry['Date'] = chorestracker[2]
-        chorestrackerResult.append(choresTrackerEntry)
+        chorestrackerResults.append(choresTrackerEntry)
     
-    return chorestrackerResult
+    return chorestrackerResults
 
     
 

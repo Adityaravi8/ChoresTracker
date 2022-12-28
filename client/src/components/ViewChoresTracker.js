@@ -25,11 +25,11 @@ function ViewChoresTracker() {
           </tr>
         </thead>
         <tbody className="tbody">
-          {ChoresTracker.map((chorestrackerResult) => (
+          {ChoresTracker.map((chorestrackerResults) => (
             <tr>
-              <td className="td">{chorestrackerResult.Person}</td>
-              <td>{chorestrackerResult.Chores}</td>
-              <td>{chorestrackerResult.Date}</td>
+              <td className="td">{chorestrackerResults.Person}</td>
+              <td>{chorestrackerResults.Chores}</td>
+              <td>{chorestrackerResults.Date}</td>
             </tr>
           ))}
         </tbody>
