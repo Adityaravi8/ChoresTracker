@@ -3,6 +3,7 @@ import "./App.css";
 import AddPeople from "./components/AddPeople";
 import AddChores from "./components/AddChores";
 import InsertChoresTracker from "./components/InsertChoresTracker";
+import ViewChoresTracker from "./components/ViewChoresTracker";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <h1>ChoresTracker</h1>
       <InsertChoresTracker />
       <br />
+      <ViewChoresTracker />
     </div>
   );
 }

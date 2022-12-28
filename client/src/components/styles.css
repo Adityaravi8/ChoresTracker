@@ -1,0 +1,7 @@
+.table {
+    width: 40%;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}

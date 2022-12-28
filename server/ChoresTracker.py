@@ -15,7 +15,7 @@ def index():
     if request.method == 'POST':
 
         #Fetch the data from the form
-        userData = request.form
+        userData = request.json
         name_id = userData['name_id']
         chore_id = userData['chore_id']
         date = userData['date']
@@ -66,10 +66,15 @@ def peoples():
 
     mycursor.execute("SELECT * FROM people")
 
-    peopleTable = mycursor.fetchall()
+    peopleTableEntries = mycursor.fetchall()
+    peopleResult = []
+    for people in peopleTableEntries:
+        personEntry = {}  
+        personEntry['id'] = people[0] 
+        personEntry['name'] =  people[1]
+        peopleResult.append(personEntry)
 
-    
-    return {peopleTable}
+    return peopleResult
 
 @app.route('/ViewChores')
 def chores():
@@ -77,23 +82,38 @@ def chores():
 
     mycursor = mysql.connection.cursor()
 
-    mycursor.execute("SELECT Chore FROM chores")
+    mycursor.execute("SELECT * FROM chores")
 
-    choresTable = mycursor.fetchall()
+    choresTableEntries = mycursor.fetchall()
+    choreResult = []
 
-    return {choresTable}
+    for chores in choresTableEntries:
+        choreEntry = {}
+        choreEntry['id'] = chores[0]
+        choreEntry['chore'] = chores[1]
+        choreResult.append(choreEntry)
+    
+    return choreResult
 
 
-@app.route('/ViewChorestracker')
+@app.route('/ViewChoresTracker')
 def chorestracker():
 
     mycursor = mysql.connection.cursor()
 
     mycursor.execute("SELECT * FROM chorestracker")
 
-    chorestrackerTable = mycursor.fetchall()
+    choresTrackerTable = mycursor.fetchall()
+    chorestrackerResult = []
 
-    return {chorestrackerTable}
+    for chorestracker in choresTrackerTable:
+        choresTrackerEntry = {}
+        choresTrackerEntry['Person'] = chorestracker[0]
+        choresTrackerEntry['Chores'] = chorestracker[1]
+        choresTrackerEntry['Date'] = chorestracker[2]
+        chorestrackerResult.append(choresTrackerEntry)
+    
+    return chorestrackerResult
 
     
 
