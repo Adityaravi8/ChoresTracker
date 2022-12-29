@@ -2,6 +2,47 @@
     width: 40%;
     border-collapse: collapse;
     text-align: center;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     overflow: hidden;
+}
+
+.thead {
+
+    position: sticky;
+    z-index: 100;
+
+}
+
+.trhead {
+
+    background: var(--bg);
+}
+
+.th {
+    padding: 8px;
+    color: var(--text-color);
+    text-transform: capitalize;
+
+}
+
+.trbody {
+
+    background: var(--white);
+
+}
+
+.td1 {
+    padding: 8px;
+    border: 2px solid var(--bg2);
+
+}
+.td2 {
+    padding: 8px;
+    border: 2px solid var(--bg2);
+
+}
+.td3 {
+    padding: 8px;
+    border: 2px solid var(--bg2);
+
 }

@@ -27,9 +27,9 @@ function ViewChoresTracker() {
         <tbody className="tbody">
           {ChoresTracker.map((chorestrackerResults) => (
             <tr>
-              <td className="td">{chorestrackerResults.Person}</td>
-              <td>{chorestrackerResults.Chores}</td>
-              <td>{chorestrackerResults.Date}</td>
+              <td className="td1">{chorestrackerResults.Person}</td>
+              <td className="td2">{chorestrackerResults.Chores}</td>
+              <td className="td3">{chorestrackerResults.Date}</td>
             </tr>
           ))}
         </tbody>
