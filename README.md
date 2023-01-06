@@ -14,7 +14,6 @@ Jinja2==3.1.2
 MarkupSafe==2.1.1
 mysql-connector-python==8.0.31
 mysqlclient==2.1.1
-PyYAML==6.0
 Werkzeug==2.2.2
 
 Install Packages using pip from the same directory as the requirements.txt file:
