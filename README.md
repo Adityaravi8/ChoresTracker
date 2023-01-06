@@ -31,4 +31,4 @@ Change into the client directory and use the command below to start the react ap
 
 npm start
 
-You will need to setup a mysql database and connect the API to the database. The sql folder contains the file to create the database called CreateDB and another file that creates the table used in this application called CreateTables. The ChoresTracker.py file contains the database configuration. Change the host,user,password to the correct configurations to your mysql database.
+You will need to setup a mysql database and connect the API to the database. The sql folder contains the file to create the database called CreateDB and another file that creates the table used in this application called CreateTables. The ChoresTracker.py file contains the database configuration. Change the host,user,password to the host,user and password you created in your local drive.
