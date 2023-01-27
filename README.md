@@ -26,8 +26,9 @@ python ChoresTracker.py
 
 Run Frontend:
 
-Change into the client directory and use the command below to start the react app:
+Change into the client directory to install and run the program:
 
-npm start
+1. npm install
+2. npm start
 
 You will need to setup a mysql database and connect the API to the database. The sql folder contains the file to create the database and the tables used in this application called Config.sql. The ChoresTracker.py file contains the database configuration. Change the host,user,password to the correct configurations of your my sql database.
