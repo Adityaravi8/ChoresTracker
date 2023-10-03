@@ -40,9 +40,12 @@ function InsertChoresTracker() {
   };
   return (
     <div>
-      <div>Select User:</div>
+      <div className="input-label">Select User:</div>
       <br />
-      <select onChange={(event) => setSelectedPerson(event.target.value)}>
+      <select
+        className="select-box"
+        onChange={(event) => setSelectedPerson(event.target.value)}
+      >
         <option value="">Select People</option>
         {people.map((peopleResults) => (
           <option value={peopleResults.id} label={peopleResults.name}></option>
@@ -50,9 +53,12 @@ function InsertChoresTracker() {
       </select>
       <br />
       <br />
-      <div>Select Chore:</div>
+      <div className="input-label">Select Chore:</div>
       <br />
-      <select onChange={(event) => setSelectedChore(event.target.value)}>
+      <select
+        className="select-box"
+        onChange={(event) => setSelectedChore(event.target.value)}
+      >
         <option value="">Select Chore</option>
         {chores.map((choreResults) => (
           <option value={choreResults.id} label={choreResults.chore}></option>
@@ -60,19 +66,22 @@ function InsertChoresTracker() {
       </select>
       <br />
       <br />
-      <form>
-        <div>Enter Date:</div>
+      <form className="form-field">
+        <div className="input-label">Enter Date:</div>
         <br />
         <input
           type="text"
           placeholder="Enter Date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
+          className="input-date"
         ></input>
       </form>
       <br />
       <br />
-      <button onClick={postData}>Submit</button>
+      <button onClick={postData} className="submit-button">
+        Submit
+      </button>
     </div>
   );
 }

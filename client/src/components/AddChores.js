@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./styles.css";
 
 function AddChores() {
   const [chore, setChore] = useState([]);
@@ -20,8 +21,11 @@ function AddChores() {
           placeholder="Enter Chore"
           value={chore}
           onChange={(e) => setChore(e.target.value)}
+          className="chore-input"
         />
-        <button onClick={postData}>Submit</button>
+        <button onClick={postData} className="submit-button">
+          Submit
+        </button>
       </form>
     </div>
   );

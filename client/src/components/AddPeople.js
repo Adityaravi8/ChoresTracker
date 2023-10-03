@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./styles.css";
 
 function AddPeople() {
   const [name, setName] = useState([]);
@@ -20,8 +21,11 @@ function AddPeople() {
           placeholder="Enter Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className="people-input"
         />
-        <button onClick={postData}>Submit</button>
+        <button onClick={postData} className="submit-button">
+          Submit
+        </button>
       </form>
     </div>
   );
