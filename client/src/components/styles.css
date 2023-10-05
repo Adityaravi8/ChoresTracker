@@ -48,11 +48,6 @@
     border: 2px solid var(--bg2);
 
 }
-
-.AddChores {
-    text-align: center;
-    margin: 20px;
-  }
   
   .chore-input {
     padding: 10px;
@@ -75,10 +70,7 @@
     background-color: #0056b3;
   }
 
-  .AddPeople {
-    text-align: center;
-    margin: 20px;
-  }
+
   
   .people-input {
     padding: 10px;

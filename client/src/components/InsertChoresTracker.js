@@ -37,7 +37,10 @@ function InsertChoresTracker() {
         date,
       })
       .catch((err) => console.log(err));
+    alert("Success");
+    window.location.reload(false);
   };
+
   return (
     <div>
       <div className="input-label">Select User:</div>

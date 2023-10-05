@@ -2,20 +2,36 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./styles.css";
 
-function AddChores() {
+function AddEntries() {
+  const [name, setName] = useState([]);
   const [chore, setChore] = useState([]);
 
   const postData = (e) => {
     e.preventDefault();
     axios
+      .post("/AddPeople", {
+        name,
+      })
+      .catch((err) => console.log(err));
+
+    axios
       .post("/AddChores", {
         chore,
       })
       .catch((err) => console.log(err));
+    alert("Success");
+    window.location.reload(false);
   };
   return (
-    <div className="AddChores">
+    <div className="AddEntries">
       <form onSubmit={(e) => e.preventDefault()}>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="people-input"
+        />
         <input
           type="text"
           placeholder="Enter Chore"
@@ -30,4 +46,5 @@ function AddChores() {
     </div>
   );
 }
-export default AddChores;
+
+export default AddEntries;
