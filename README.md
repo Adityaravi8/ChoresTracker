@@ -1,6 +1,6 @@
 # ChoresTracker
 
-Keep track of your chores. In order to use this application, you must install react and install the list of python packages used in this program.
+# Keep track of your chores. In order to use this application, you must install react and install the list of python packages used in this program.
 
 Flask Api Setup:
 
@@ -18,17 +18,17 @@ Werkzeug==2.2.2
 
 Install Packages using pip from the same directory as the requirements.txt file:
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
-Change into the server directory and use the following command to run the api:
+# Change into the server directory and use the following command to run the api:
 
-python ChoresTracker.py
+`python ChoresTracker.py`
 
 Run Frontend:
 
-Change into the client directory to install and run the program:
+# Change into the client directory to install and run the program:
 
-1. npm install
-2. npm start
+1. `npm install`
+2. `npm start`
 
 You will need to setup a mysql database and connect the API to the database. The sql folder contains the file to create the database and the tables used in this application called Config.sql. The ChoresTracker.py file contains the database configuration. Change the host,user,password to the correct configurations of your my sql database.
