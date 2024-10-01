@@ -5,15 +5,17 @@ import "./styles.css";
 function ViewChoresTracker() {
   const [ChoresTracker, setChoresTracker] = useState([]);
 
+  const apiURL = process.env.REACT_APP_API_URL;
   useEffect(() => {
+    console.log("API URL:", apiURL);
     axios
-      .get("ViewChoresTracker")
+      .get(`${apiURL}/ViewChoresTracker`)
       .then((response) => {
         console.log(response.data);
         setChoresTracker(response.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [apiURL]);
   return (
     <div>
       <table className="table">

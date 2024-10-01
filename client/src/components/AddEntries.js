@@ -5,17 +5,17 @@ import "./styles.css";
 function AddEntries() {
   const [name, setName] = useState([]);
   const [chore, setChore] = useState([]);
-
+  const apiURL = process.env.REACT_APP_API_URL;
   const postData = (e) => {
     e.preventDefault();
     axios
-      .post("/AddPeople", {
+      .post(`${apiURL}/AddPeople`, {
         name,
       })
       .catch((err) => console.log(err));
 
     axios
-      .post("/AddChores", {
+      .post(`${apiURL}/AddChores`, {
         chore,
       })
       .catch((err) => console.log(err));

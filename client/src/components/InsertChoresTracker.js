@@ -8,30 +8,31 @@ function InsertChoresTracker() {
   const [chores, setChores] = useState([]);
   const [date, setDate] = useState([]);
 
+  const apiURL = process.env.REACT_APP_API_URL;
   useEffect(() => {
     axios
-      .get("/ViewPeople")
+      .get(`${apiURL}/ViewPeople`)
       .then((response) => {
         console.log(response.data);
         setPeople(response.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [apiURL]);
   useEffect(() => {
     axios
-      .get("/ViewChores")
+      .get(`${apiURL}/ViewChores`)
       .then((response) => {
         console.log(response.data);
         setChores(response.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [apiURL]);
 
   const postData = (e) => {
     e.preventDefault();
     console.log({ selectedChore, selectedPerson });
     axios
-      .post("/InsertChoresTracker", {
+      .post(`${apiURL}/InsertChoresTracker`, {
         name_id: selectedPerson,
         chore_id: selectedChore,
         date,

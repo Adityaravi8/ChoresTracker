@@ -15,10 +15,26 @@ MarkupSafe==2.1.1
 mysql-connector-python==8.0.31
 mysqlclient==2.1.1
 Werkzeug==2.2.2
+python-dotenv==1.0.1
 
 Install Packages using pip from the same directory as the requirements.txt file:
 
 `pip install -r requirements.txt`
+
+# Create a database in MySQL
+
+## Connect database to api
+
+1. Create a .env file in the server directory containing the following code and replace the placeholders with the corresponding details of your database:
+
+`MYSQL_HOST=<Database Host>`
+`MYSQL_USER=<Database User>`
+`MYSQL_PASSWORD=<Database Password>`
+`MYSQL_DB=<Database Name>`
+
+2. Create a .env file in the client directory containing the following code and replace the placeholder with the actual URL of the flask API:
+
+`REACT_APP_API_URL=http://<API URL>`
 
 # Change into the server directory and use the following command to run the api:
 
@@ -30,5 +46,3 @@ Run Frontend:
 
 1. `npm install`
 2. `npm start`
-
-You will need to setup a mysql database and connect the API to the database. The sql folder contains the file to create the database and the tables used in this application called Config.sql. The ChoresTracker.py file contains the database configuration. Change the host,user,password to the correct configurations of your my sql database.
